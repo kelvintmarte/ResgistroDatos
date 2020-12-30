@@ -2,6 +2,20 @@ import csv
 
 ARCHIVO_PATH = "./Data.csv"
 
+#ReadCharByChar
+file = open('Data.csv', 'r')
+
+while 1:
+
+    char = file.read(1)
+    if not char:
+        break
+
+    print(char)
+
+file.close()
+
+#ReadCharByChar
 def escribeEnCsv(archivo, data):
     for item in data:
         archivo.write("{},".format(item))
@@ -26,7 +40,9 @@ def main():
         print("buscar: Buscar un registro")
         print("mostrar: Mostrar registros")
         print("salir: Salir")
-        
+        #Eliminar
+        #print("eliminar: Elimina")
+
         print("\n")
         
         print("Que desea hacer: ", end="")
@@ -67,6 +83,7 @@ def main():
                 listado = leerCsv(archivo)
                 for row in listado:
                     imprimeEntrada(row)
+#Eliminar
 
 if __name__ == "__main__":
     main()
